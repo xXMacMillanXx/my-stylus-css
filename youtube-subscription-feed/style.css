@@ -1,0 +1,68 @@
+/* ==UserStyle==
+@name           www.youtube.com/feed/subscriptions
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    Bring back a list view in the youtube subscription feed.
+@author         xXMacMillanXx
+==/UserStyle== */
+
+@-moz-document url-prefix("https://www.youtube.com/feed/subscriptions") {
+    :root {
+        --my-thumbnail-max-width: 420px;
+        --my-video-container-height: calc(var(--my-thumbnail-max-width) * (9 / 16));
+    }
+    
+    div#primary > ytd-rich-grid-renderer {
+        --ytd-rich-grid-item-max-width: 70% !important;
+        --ytd-rich-grid-items-per-row: 1 !important;
+    }
+    
+    ytd-rich-section-renderer > div#content {
+        max-width: 100% !important;
+    }
+
+    /* height of video instances */
+    div#contents > ytd-rich-item-renderer > div#content > yt-lockup-view-model {
+        /* height: 220px !important; */
+        height: var(--my-video-container-height) !important;
+    }
+
+    /* height of hover shadow of video */
+    div#contents > ytd-rich-item-renderer > div#content > yt-lockup-view-model > div > yt-touch-feedback-shape {
+        /* height: 260px !important; */
+        height: calc(var(--my-video-container-height) + 25px) !important;
+    }
+
+    /* thumbnail size */
+    div#contents > ytd-rich-item-renderer > div#content > yt-lockup-view-model > div > a {
+        /* max-height: 240px !important; */ /* the thumbnails don't seem to care for the max-height value */
+        max-width: var(--my-thumbnail-max-width) !important;
+    }
+
+    /* Text positioning */
+    div#contents > ytd-rich-item-renderer > div#content > yt-lockup-view-model > div > div {
+        /* top: -165px;
+        left: 440px; */
+        top: calc(var(--my-video-container-height) / -1.5);
+        left: calc(var(--my-thumbnail-max-width) + 20px);
+    }
+    
+    ytd-rich-item-renderer div.yt-lockup-metadata-view-model__menu-button {
+        display: contents;
+    }
+    
+    /* size of "notify me" button for live streams */
+    ytd-rich-item-renderer lockup-attachments-view-model.ytLockupAttachmentsViewModelHost {
+        max-width: 30%;
+    }
+    
+    /* hide "Most relevant" section */
+    ytd-rich-section-renderer:has( ytd-rich-item-renderer[is-responsive-grid="STANDARD"] ) {
+        display: none;
+    }
+    
+    /* fix margin for first element in a "row" */
+    ytd-rich-item-renderer[is-in-first-column=""] {
+        margin-left: 8px !important;
+    }
+}

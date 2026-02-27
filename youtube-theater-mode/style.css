@@ -1,0 +1,63 @@
+/* ==UserStyle==
+@name           www.youtube.com/watch
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    Bring back old theater mode for youtube videos.
+@author         xXMacMillanXx
+==/UserStyle== */
+
+@-moz-document url-prefix("https://www.youtube.com/watch") {
+    ytd-app {
+        overflow: auto !important;
+    }
+    ytd-app[scrolling] {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: calc((var(--ytd-app-fullerscreen-scrollbar-width) + 1px)*-1) !important;
+        bottom: 0 !important;
+        overflow-x: auto !important;
+    }
+    ytd-watch-flexy[full-bleed-player] #single-column-container.ytd-watch-flexy,
+    ytd-watch-flexy[full-bleed-player] #columns.ytd-watch-flexy {
+        display: flex !important;
+    }
+    .ytp-fullscreen-grid-peeking.ytp-full-bleed-player.ytp-delhi-modern:not(.ytp-autohide) .ytp-chrome-bottom {
+        bottom: 0 !important;
+        opacity: 1 !important;
+    }
+    #movie_player:not(.ended-mode) .ytp-fullscreen-grid {
+        display: none !important;
+        top: 100% !important;
+        opacity: 0 !important;
+    }/*
+    button.ytp-fullscreen-grid-expand-button.ytp-button {
+        display: none;
+    }
+    #full-bleed-container {
+        height: 82vh !important;
+    }*/
+    ytd-watch-flexy[full-bleed-player][i-max-theater-mode][theater]:not([fullscreen]) #full-bleed-container.ytd-watch-flexy{
+        height:56.25vw;
+        max-height:81.5vh;
+    }
+    h2.ytPlayerOverlayVideoDetailsRendererTitle.ytPlayerOverlayVideoDetailsRendererSingleLineTitle {
+        display: none;
+    }
+    div.ytp-overlays-container {
+        display: none;
+    }
+    div.ytp-gradient-bottom {
+        display: none;
+    }
+    .ytp-fullscreen-grid-peeking.ytp-full-bleed-player.ytp-delhi-modern:not(.ytp-autohide) .ytp-chrome-bottom, .ytp-fullscreen-grid-peeking.ytp-full-bleed-player.ytp-delhi-modern.ytp-autohide.ytp-grid-scrolling .ytp-chrome-bottom {
+        opacity: 1 !important;
+    }
+    .ytp-fullscreen-grid-peeking.ytp-full-bleed-player.ytp-delhi-modern .ytp-chrome-bottom {
+        bottom: 0 !important;
+    }
+    .ytp-delhi-modern.ytp-full-bleed-player.ytp-fullscreen-grid-active:not(.html5-video-player.ended-mode) .ytp-chrome-bottom {
+        bottom: 0 !important;
+        opacity: 1 !important;
+    }
+}
