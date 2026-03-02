@@ -43,7 +43,7 @@
     div#contents > ytd-rich-item-renderer > div#content > yt-lockup-view-model > div > div {
         /* top: -165px;
         left: 440px; */
-        top: calc(var(--my-video-container-height) / -1.5);
+        top: calc(var(--my-video-container-height) / -1);
         left: calc(var(--my-thumbnail-max-width) + 20px);
     }
     
