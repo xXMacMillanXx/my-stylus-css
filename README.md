@@ -9,7 +9,7 @@ a list. Also I hide the *most recent* section, because it annoyed me as well.
 
 ## youtube theater mode
 
-It looks like YT reverted this some time ago, so theater mode works, like again like it did before.
+It looks like YT reverted this some time ago, so theater mode works, again like it did before.
 I'll still keep this CSS in case they change their mind and change theater mode again.
 
 YouTube changed how the theater mode works, it now is more like a lesser version of fullscreen,
