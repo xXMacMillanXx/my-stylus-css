@@ -57,7 +57,14 @@
     }
     
     /* hide "Most relevant" section */
+    /* old way */
     ytd-rich-section-renderer:has( ytd-rich-item-renderer[is-responsive-grid="STANDARD"] ) {
+        display: none;
+    }
+    
+    /* hide "Most relevant" section */
+    /* new way */
+    ytd-rich-section-renderer.ytd-rich-grid-renderer.style-scope:nth-of-type(2) {
         display: none;
     }
     
