@@ -62,9 +62,15 @@
         display: none;
     }
     
-    /* hide "Most relevant" section */
+    /* hide "Shorts" section; was "Most relevant" before. */
     /* new way */
-    ytd-rich-section-renderer.ytd-rich-grid-renderer.style-scope:nth-of-type(2) {
+    /*ytd-rich-section-renderer.ytd-rich-grid-renderer.style-scope:nth-of-type(2) {
+        display: none;
+    }*/
+    
+    /* hide "Most relevant" section */
+    /* changed AGAIN! Why YouTube! */
+    ytd-rich-section-renderer.ytd-rich-grid-renderer.style-scope:nth-of-type(3) {
         display: none;
     }
     
