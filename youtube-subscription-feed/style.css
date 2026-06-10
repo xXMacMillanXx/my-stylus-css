@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           www.youtube.com/feed/subscriptions
 @namespace      github.com/openstyles/stylus
-@version        1.0.0
+@version        1.1.0
 @description    Bring back a list view in the youtube subscription feed.
 @author         xXMacMillanXx
 ==/UserStyle== */
@@ -57,20 +57,20 @@
     }
     
     /* hide "Most relevant" section */
-    /* old way */
+    /* old way */ /*
     ytd-rich-section-renderer:has( ytd-rich-item-renderer[is-responsive-grid="STANDARD"] ) {
         display: none;
-    }
+    } */
     
-    /* hide "Shorts" section; was "Most relevant" before. */
+    /* "Most relevant" and "Shorts" share position 2 and 3 */
     /* new way */
     /*ytd-rich-section-renderer.ytd-rich-grid-renderer.style-scope:nth-of-type(2) {
         display: none;
     }*/
     
     /* hide "Most relevant" section */
-    /* changed AGAIN! Why YouTube! */
-    ytd-rich-section-renderer.ytd-rich-grid-renderer.style-scope:nth-of-type(3) {
+    /* thanks! the "Shorts" section has the attribute 'is-shorts' */
+    ytd-rich-section-renderer:has( ytd-rich-shelf-renderer:not([is-shorts]) ) {
         display: none;
     }
     
